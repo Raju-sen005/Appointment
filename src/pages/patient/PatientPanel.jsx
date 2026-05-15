@@ -236,106 +236,6 @@ export default function PatientPanel() {
           {step === 3 && (
             <div>
               <StepHeader
-                title="Basic Information"
-                subtitle="Please provide your basic details."
-              />
-
-              <div className="space-y-8">
-                {/* NAME */}
-                <div>
-                  <label className="block mb-4 text-lg font-semibold text-gray-800">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Enter your full name"
-                    className="
-            w-full
-            border
-            border-gray-300
-            rounded-3xl
-            p-5
-            outline-none
-            focus:ring-4
-            focus:ring-blue-100
-          "
-                  />
-                </div>
-                {/* GENDER */}
-                <div>
-                  <label className="block mb-4 text-lg font-semibold text-gray-800">
-                    Gender
-                  </label>
-
-                  <div className="grid md:grid-cols-3 gap-5">
-                    {["Male", "Female", "Other"].map((item) => (
-                      <button
-                        key={item}
-                        onClick={() => setGender(item)}
-                        className={`
-                p-5
-                rounded-3xl
-                border
-                transition-all
-
-                ${
-                  gender === item
-                    ? "border-blue-600 bg-blue-50 shadow-lg shadow-blue-100"
-                    : "border-gray-200 hover:border-blue-400 hover:bg-blue-50"
-                }
-              `}
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="font-semibold">{item}</span>
-
-                          {gender === item && (
-                            <Check size={18} className="text-blue-600" />
-                          )}
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* AGE */}
-                <div>
-                  <label className="block mb-4 text-lg font-semibold text-gray-800">
-                    Age
-                  </label>
-
-                  <input
-                    type="number"
-                    value={age}
-                    onChange={(e) => setAge(e.target.value)}
-                    placeholder="Enter your age"
-                    className="
-            w-full
-            border
-            border-gray-300
-            rounded-3xl
-            p-5
-            outline-none
-            focus:ring-4
-            focus:ring-blue-100
-          "
-                  />
-                </div>
-              </div>
-
-              <StepButtons
-                nextStep={nextStep}
-                prevStep={prevStep}
-                disableNext={!gender || !age}
-              />
-            </div>
-          )}
-
-          {/* STEP 4 */}
-          {step === 4 && (
-            <div>
-              <StepHeader
                 title="What symptoms are you facing?"
                 subtitle="Select all symptoms that apply to you."
               />
@@ -387,8 +287,8 @@ export default function PatientPanel() {
             </div>
           )}
 
-          {/* STEP 5 */}
-          {step === 5 && (
+          {/* STEP 4 */}
+          {step === 4 && (
             <div>
               <StepHeader
                 title="Describe your condition"
@@ -420,8 +320,8 @@ export default function PatientPanel() {
             </div>
           )}
 
-          {/* STEP 6 */}
-          {step === 6 && (
+          {/* STEP 5 */}
+          {step === 5 && (
             <div>
               <StepHeader
                 title="How severe is your condition?"
@@ -469,8 +369,8 @@ export default function PatientPanel() {
             </div>
           )}
 
-          {/* STEP 7 */}
-          {step === 7 && (
+          {/* STEP 6 */}
+          {step === 6 && (
             <div>
               <StepHeader
                 title="Your Assigned Doctor"
@@ -600,8 +500,8 @@ export default function PatientPanel() {
             </div>
           )}
 
-          {/* STEP 8 */}
-          {step === 8 && (
+          {/* STEP 7 */}
+          {step === 7 && (
             <div>
               <StepHeader
                 title="Select Appointment Slot"
@@ -641,6 +541,105 @@ export default function PatientPanel() {
                 nextStep={nextStep}
                 prevStep={prevStep}
                 disableNext={!selectedSlot}
+              />
+            </div>
+          )}
+
+          {step === 8 && (
+            <div>
+              <StepHeader
+                title="Basic Information"
+                subtitle="Please provide your basic details."
+              />
+
+              <div className="space-y-8">
+                {/* NAME */}
+                <div>
+                  <label className="block mb-4 text-lg font-semibold text-gray-800">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Enter your full name"
+                    className="
+            w-full
+            border
+            border-gray-300
+            rounded-3xl
+            p-5
+            outline-none
+            focus:ring-4
+            focus:ring-blue-100
+          "
+                  />
+                </div>
+                {/* GENDER */}
+                <div>
+                  <label className="block mb-4 text-lg font-semibold text-gray-800">
+                    Gender
+                  </label>
+
+                  <div className="grid md:grid-cols-3 gap-5">
+                    {["Male", "Female", "Other"].map((item) => (
+                      <button
+                        key={item}
+                        onClick={() => setGender(item)}
+                        className={`
+                p-5
+                rounded-3xl
+                border
+                transition-all
+
+                ${
+                  gender === item
+                    ? "border-blue-600 bg-blue-50 shadow-lg shadow-blue-100"
+                    : "border-gray-200 hover:border-blue-400 hover:bg-blue-50"
+                }
+              `}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-semibold">{item}</span>
+
+                          {gender === item && (
+                            <Check size={18} className="text-blue-600" />
+                          )}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* AGE */}
+                <div>
+                  <label className="block mb-4 text-lg font-semibold text-gray-800">
+                    Age
+                  </label>
+
+                  <input
+                    type="number"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    placeholder="Enter your age"
+                    className="
+            w-full
+            border
+            border-gray-300
+            rounded-3xl
+            p-5
+            outline-none
+            focus:ring-4
+            focus:ring-blue-100
+          "
+                  />
+                </div>
+              </div>
+
+              <StepButtons
+                nextStep={nextStep}
+                prevStep={prevStep}
+                disableNext={!gender || !age}
               />
             </div>
           )}
