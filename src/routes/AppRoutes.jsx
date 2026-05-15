@@ -7,7 +7,7 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PatientPanel />} />
-        <Route path="/doctor" element={<DoctorPanel />} />
+        <Route path="https://appointment-l8fr.onrender.com/doctor" element={<DoctorPanel />} />
       </Routes>
     </BrowserRouter>
   );
